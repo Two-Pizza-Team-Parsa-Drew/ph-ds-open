@@ -1,0 +1,43 @@
+--After a critical review I have discovered a total of 9 relations and 8 relationship sets--
+
+/*PFNo is PersonalFileNumber*/
+
+employee(PFNo, NationalID, KRApin, birthDate)
+
+employeeProfile(empProfielID, firstName, lastName, emailAddress)
+
+employeeBankDetails(empBankDetailsID, bankName, bankAccountNo)
+
+jobGroup(jobGroupID, jobGroupLabel)
+
+job(jobID, jobTitle)
+
+salary(salaryID, basicSalary, NSSF, NHIF, pension, tax)
+
+educationLevel(educationLevelID, educationLevel)
+
+manager(managerID)
+
+office(officeID, officeName)
+
+And here are the relationship sets for these relations:
+
+anEmployeeHas(PFNo, empProfileID, firstName, lastName, emailAddress)
+
+anEmployeeHas(PFNo, empBankDetailsID, bankName, bankAccountNo)
+
+anEmployeeHas(PFNo, educationLevelID, educationLevel)
+
+aJobIsCategorizedAs(jobID, jobGroupID, jobGroupLabel)
+
+aJobHas(jobID, salaryID, basicSalary, NSSF, NHIF, pension, tax)
+
+anEmployeeHas(PFNo, jobID, jobTitle)
+
+aManagerHolds(managerID, officeID, officeName)
+
+anEmployeeIs(PFNo, managerID)
+
+
+
+Looks better now…feeling good
